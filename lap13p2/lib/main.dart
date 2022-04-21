@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lap13/app_screen/all_question.dart';
-import 'app_screen/questioninfo.dart';
+import './app_screen/test_route.dart';
 
-main() {
+void main() {
   runApp(const MyApp());
 }
 
@@ -12,12 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Interactivity Ex',
-      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => const Question(),
-        '/home': (context) => HomeScreen(),
+        '/': (context) => const Firstscreen(),
+        '/second': (context) => const Secscreen(),
       },
     );
   }

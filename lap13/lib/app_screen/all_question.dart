@@ -2,6 +2,44 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'tapbox.dart';
 
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.only(left: 24),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            const Image(
+              image: AssetImage('images/quiz_icon.jpg'),
+              width: 100,
+              height: 100,
+            ),
+            const Text(
+              'Welcome to the Quiz App',
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            const Text('By Athicha Santi 623040533-9'),
+            const SizedBox(
+              height: 50,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Start'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class AllQuestion extends StatefulWidget {
   final int num;
   final Map<dynamic, dynamic> info;
@@ -23,6 +61,7 @@ class _AllQuestionState extends State<AllQuestion> {
   late String q4;
   late String trueans;
   bool previous = false;
+  bool home = true;
   Widget? nextQuestion;
   //late String true_ans_color;
   @override
@@ -60,6 +99,7 @@ class _AllQuestionState extends State<AllQuestion> {
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const SizedBox(height: 12),
             Text(
@@ -103,28 +143,48 @@ class _AllQuestionState extends State<AllQuestion> {
               ),
             ),
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Container(
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Visibility(
-                      visible: previous,
-                      child: ElevatedButton(
-                        child: const Text("Previous"),
-                        onPressed: () => Navigator.of(context).pop(),
+                    Positioned(
+                      left: 0,
+                      bottom: 0,
+                      child: Visibility(
+                        visible: previous,
+                        child: ElevatedButton(
+                          child: const Text("Previous"),
+                          onPressed: () => Navigator.of(context).pop(),
+                        ),
                       ),
                     ),
-                    Visibility(
-                      visible: nextQuestion != null,
-                      child: ElevatedButton(
-                        child: const Text("Next"),
-                        onPressed: () => Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    nextQuestion ?? Container())),
+                    Positioned(
+                      bottom: 0,
+                      child: Visibility(
+                        visible: home,
+                        child: ElevatedButton(
+                          child: const Text("Home"),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, '/home'),
+                        ),
                       ),
                     ),
+                    Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: Visibility(
+                        visible: nextQuestion != null,
+                        child: ElevatedButton(
+                          child: const Text("Next"),
+                          onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      nextQuestion ?? Container())),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lap13/app_screen/all_question.dart';
 import 'app_screen/questioninfo.dart';
 
 main() {
@@ -10,12 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Flutter Interactivity Ex',
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Question(),
-      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/home': (context) => const Question(),
+      },
     );
   }
 }
