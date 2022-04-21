@@ -28,56 +28,54 @@ class Home extends StatelessWidget {
             //width: 300.0,
             //height: 100.0,
             //margin: const EdgeInsets.symmetric(horizontal: 80.0, vertical: 320),
-            child: Column(
-              children: <Widget>[
-                Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const <Widget>[
-                      Expanded(
-                          child: Text("Athicha Santi",
-                              textDirection: TextDirection.ltr,
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontFamily: 'Itim',
-                                  fontSize: 30.0,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.yellowAccent))),
-                      Expanded(
-                          child: Text("623040533-9",
-                              textDirection: TextDirection.ltr,
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontFamily: 'Itim',
-                                  fontSize: 30.0,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.yellowAccent))),
-                    ]),
-                Row(
+            child: Column(children: <Widget>[
+              Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const <Widget>[
                     Expanded(
-                        child: Text("Photo Credit:",
+                        child: Text("Athicha Santi",
                             textDirection: TextDirection.ltr,
                             style: TextStyle(
                                 decoration: TextDecoration.none,
                                 fontFamily: 'Itim',
                                 fontSize: 30.0,
                                 fontWeight: FontWeight.w700,
-                                color: Colors.lightBlueAccent))),
+                                color: Colors.yellowAccent))),
                     Expanded(
-                        child: Text("Dol Hinta",
+                        child: Text("623040533-9",
                             textDirection: TextDirection.ltr,
                             style: TextStyle(
                                 decoration: TextDecoration.none,
                                 fontFamily: 'Itim',
                                 fontSize: 30.0,
                                 fontWeight: FontWeight.w700,
-                                color: Colors.lightBlueAccent))),
-                  ],
-                ),
-                const ProfileImageAsset(),
-                const SummitBot()
-              ],
-            )));
+                                color: Colors.yellowAccent))),
+                  ]),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const <Widget>[
+                  Expanded(
+                      child: Text("Photo Credit:",
+                          textDirection: TextDirection.ltr,
+                          style: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'Itim',
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.lightBlueAccent))),
+                  Expanded(
+                      child: Text("Dol Hinta",
+                          textDirection: TextDirection.ltr,
+                          style: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'Itim',
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.lightBlueAccent))),
+                ],
+              ),
+              const ProfileImageAsset(),
+              const SummitBot()
+            ])));
   }
 }

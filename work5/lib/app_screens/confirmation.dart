@@ -21,7 +21,7 @@ class SummitBot extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               textStyle: const TextStyle(fontSize: 30),
             ),
-            child: const Text("Summit", style: TextStyle(color: Colors.lime)),
+            child: const Text("Submit", style: TextStyle(color: Colors.lime)),
             onPressed: () => {alertMsg(context)}));
   }
 }
